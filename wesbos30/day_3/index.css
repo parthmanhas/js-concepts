@@ -1,0 +1,48 @@
+:root {
+    --base: yellow;
+    --spacing: 20px;
+    --blur: 0px
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'helvetica nue', sans-serif;
+    font-weight: 100;
+    font-size: 50px;
+    background-color: teal;
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    padding: var(--spacing);
+    background-color: var(--base);
+    filter: blur(var(--blur));
+}
+
+span {
+    color: var(--base);
+    margin: 0;
+    padding: 0;
+}
