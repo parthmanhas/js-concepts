@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<head>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #ffc600;
+        font-family: sans-serif;
+    }
+
+    .checkbox-container {
+        margin-top: 10vh;
+        max-width: 400px;
+        margin: 50px auto;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 8px 8px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .checkbox-item {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #F1F1F1;
+    }
+
+    input:checked+label {
+        background: #F9F9F9;
+        text-decoration: line-through;
+    }
+
+    input[type="checkbox"] {
+        margin: 20px;
+    }
+
+    label {
+        margin: 0;
+        padding: 20px;
+        transition: background 0.2s;
+        flex: 1;
+        font-family: 'Comfortaa', cursive;
+        font-size: 20px;
+        font-weight: 200;
+        border-left: 1px solid #D1E2FF;
+    }
+
+    .checkbox-item:last-child {
+        border-bottom: 0;
+    }
+</style>
+
+<body>
+    <div class="checkbox-container">
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Checkbox 1</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Checkbox 2</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Checkbox 3</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Checkbox 4</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Checkbox 5</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Checkbox 6</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Checkbox 7</label>
+        </div>
+    </div>
+</body>
+<script>
+    const checkboxes = document.querySelectorAll('.checkbox-item input[type="checkbox"]');
+
+    let lastChecked;
+    let inBetween = false;
+
+    function handleInputChange(e) {
+        if (e.shiftKey && this.checked) {
+            checkboxes.forEach(checkbox => {
+                if (checkbox === this || checkbox === lastChecked) {
+                    inBetween = !inBetween;
+                    console.log('starting to check inbetween')
+                }
+
+                if (inBetween) {
+                    checkbox.checked = true;
+                }
+            });
+        }
+
+        lastChecked = this;
+
+    }
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('click', handleInputChange);
+    })
+</script>
+<html>
