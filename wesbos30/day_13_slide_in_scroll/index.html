@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<head>
+    <title>Slide In Scroll</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+    .pic {
+        margin: 10px;
+        width: 200px;
+        height: 200px;
+        background-size: contain;
+    }
+
+    .float-left {
+        float: left;
+        margin-left: 0;
+        opacity: 0;
+        transform: translateX(-10%);
+    }
+
+    .float-right {
+        float: right;
+        margin-right: 0;
+        opacity: 0;
+        transform: translateX(10%);
+    }
+
+    .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
+    .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
+    .panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
+    .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
+    body{
+        display: flex;
+        justify-content: center;
+        background-color: #ffc666;
+    }
+
+    .container {
+        max-width: 500px;
+        font-family: sans-serif;
+        text-align: justify;
+        font-size: x-large;
+        background-color: white;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .active {
+        opacity: 1;
+        transform: translateX(0);
+        transition: 0.5s;
+    }
+</style>
+<body>
+    <div class="container">
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <img src="https://source.unsplash.com/gYl-UtwNg_I/1500x1500" class="pic panel1 float-left">Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+        </div>
+    
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <img src="https://source.unsplash.com/gYl-UtwNg_I/1500x1500" class="pic panel2 float-right">Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing<img src="https://source.unsplash.com/gYl-UtwNg_I/1500x1500" class="pic panel3 float-right"> elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+        </div>
+        <br>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <img src="https://source.unsplash.com/gYl-UtwNg_I/1500x1500" class="pic panel2 float-right">Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing<img src="https://source.unsplash.com/gYl-UtwNg_I/1500x1500" class="pic panel3 float-right"> elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptatem aliquid, laborum atque architecto exercitationem culpa quae suscipit quibusdam eum magnam maxime obcaecati accusamus. Tempora incidunt quibusdam fugiat accusantium totam.
+        </div>
+    </div>
+</body>
+<script>
+    function debounce(func, wait = 20, immediate = true) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
+    const sliderImages = document.querySelectorAll('.pic');
+    function checkSlide() {
+        sliderImages.forEach(sliderImage => {
+            const slideInAt = ( window.scrollY + window.innerHeight ) + sliderImage.height / 2;
+            const imageBottom = sliderImage.offsetTop + sliderImage.height;
+            const isHalfShown = slideInAt > sliderImage.offsetTop;
+            const isScrolledPast = window.scrollY > imageBottom;
+            
+            if(isHalfShown && !isScrolledPast) {
+                sliderImage.classList.add('active');
+            } else {
+                sliderImage.classList.remove('active');
+            }
+        });
+    
+    }   
+
+    window.addEventListener('scroll', debounce(checkSlide))
+</script>
+</html>
