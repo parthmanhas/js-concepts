@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head></head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+<script>
+
+    function logMouseMove() {
+        console.log('moved');
+    }
+
+    function throttle(fn, delay) {
+        let flag = true;
+        return function() {
+            if(flag) {
+                fn();
+                flag = false;
+                setTimeout(() => {
+                    flag = true;
+                }, delay);
+            }
+        }
+    }
+
+    document.addEventListener('mousemove', throttle(logMouseMove, 1000));
+</script>
+
+</html>
