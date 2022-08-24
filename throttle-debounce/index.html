@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head></head>
+
+<body>
+    <div style="display: flex; flex-direction: column; width: 400px; font-size: xx-large">
+        <input type="text" style="height: 30px; font-size: inherit; margin-bottom: 10px">
+        <div>Default: <span id="default"></span></div>
+        <div>Debounce: <span id="debounce"></span></div>
+        <div>Throttle: <span id="throttle"></span></div>
+    </div>
+</body>
+<script>
+    const input = document.querySelector('input');
+    const defaultText = document.getElementById('default');
+    const debounceText = document.getElementById('debounce');
+    const throttleText = document.getElementById('throttle');
+
+    const updateDebounceText = debounce(text => {
+        debounceText.textContent = text;
+    })
+
+    const updateThrottleText = throttle(text => {
+        throttleText.textContent = text;
+    })
+
+    input.addEventListener('input', (e) => {
+        defaultText.textContent = e.target.value;
+        updateDebounceText(e.target.value);
+        updateThrottleText(e.target.value);
+    });
+
+    function debounce(cb, delay = 1000) {
+        let timeout;
+        return function (...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                cb(...args);
+            }, delay);
+        }
+    }
+
+    function throttle(cb, delay = 1000) {
+        let shouldWait = false;
+        let waitingArgs;
+
+        return (...args) => {
+            if(shouldWait) {
+                waitingArgs = args;
+                return;
+            };
+
+            cb(...args);
+            shouldWait = true;
+
+            setTimeout(() => {
+                if(waitingArgs == null) {
+                    shouldWait = false;
+                } else {
+                    cb(...waitingArgs);
+                    waitingArgs = null;
+                }
+            }, delay);
+        }
+    }
+</script>
+
+</html>
