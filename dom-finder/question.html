@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="rootA">
+        <div>
+            <div></div>
+            <div>
+                <div>
+                    <div>
+                        <div id="nodeA">Value of Node A</div>
+                        <div></div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+            <div></div>
+        </div>
+        <div></div>
+    </div>
+    <div id="rootB">
+        <div>
+            <div></div>
+            <div>
+                <div>
+                    <div>
+                        <div id="nodeB">Value of Node B</div>
+                        <div></div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+            <div></div>
+        </div>
+        <div></div>
+    </div>
+</body>
+<script>
+
+    // given
+    let rootA = document.getElementById('rootA');
+    let rootB = document.getElementById('rootB');
+    let nodeA = document.getElementById('nodeA');
+
+    const getPathFromSourceToDestination = (source, destination) => {
+        const path = [];
+        while(source !== destination) {
+            const currentNode = source;
+            const currentNodeParent = currentNode.parentElement;
+            const index = Array.from(currentNodeParent.children).indexOf(currentNode);
+            path.push(index);
+            source = currentNodeParent;
+        }
+        return path;
+    }
+
+    const getFromSourceToDestination = (source, path) => {
+        while(path.length) {
+            source = source.children[path.pop()];
+        }
+        return source;
+    }
+
+    const pathTraveled = getPathFromSourceToDestination(nodeA, rootA);
+    console.log(pathTraveled)
+    const nodeTraveledTo = getFromSourceToDestination(rootB, pathTraveled);
+
+    console.log(nodeTraveledTo.innerText);
+
+</script>
+</html>
