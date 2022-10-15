@@ -5,15 +5,21 @@ const memoize = (fn) => {
   return function (...args) {
     const argsToString = JSON.stringify(args);
     if (memo[argsToString]) {
-        console.log('return memoized value')
+        console.log(`return memoized value ${argsToString}`)
       return memo[argsToString];
     }
-    memo[argsToString] = fn.apply(null, args);
+    memo[argsToString] = fn.apply(this, args);
     return memo[argsToString];
   };
 };
 
 const addMemoized = memoize(add);
 
-console.log(addMemoized(2, 9));
-console.log(addMemoized(2, 9));
+const factorial = memoize(n => {
+    if(n === 1) return 1;
+    return n * factorial(n-1);
+});
+
+console.log(factorial(4))
+console.log(factorial(4))
+console.log(factorial(5))
